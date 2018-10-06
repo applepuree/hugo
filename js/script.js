@@ -23,25 +23,25 @@ function score(element) {
 	if (total <= 4) {
 		$total.html(total);
         $hint.html('Hugo不愛Sara了...QQ');
-		$img.attr('src', 'img/hugo_score1.png');
+		$img.attr('src', 'img/hugo_score1.gif');
 
 	// 當分數介於 5~8 分
 	} else if (total >= 5 && total <= 8) {
 		$total.html(total);
         $hint.html('Hugo好像有點在意Sara...?');
-        $img.attr('src', 'img/hugo_score2.png');
+        $img.attr('src', 'img/hugo_score2.gif');
 
 	// 當分數介於 9~12 分
 	} else if (total >= 9 && total <= 12) {
 		$total.html(total);
         $hint.html('Hugo非常喜歡Sara呢！');
-        $img.attr('src', 'img/hugo_score3.png');
+        $img.attr('src', 'img/hugo_score3.gif');
 
 	// 當分數為滿分時
 	} else {
 		$total.html(total);
         $hint.html('恭喜Hugo獲得神秘小禮物！');
-        $img.attr('src', 'img/hugo_score4.png');
+        $img.attr('src', 'img/hugo_score4.gif');
         $restart.hide();
         $gift.show();
 	}

@@ -2,6 +2,21 @@
 @color-black: #242424;
 @color-blue: #5e909c;
 
+@keyframes up-down {
+  0%, 50%, 100% {transform: translateY(0);}
+  25% {transform: translateY(-8px);}
+  75% {transform: translateY(8px);}
+}
+
+@keyframes zoom-in {
+  0% {transform: scale(0.1);}
+  100% {transform: scale(1);}
+}
+
+@keyframes zoom {
+  0%, 100% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+}
 
 body {
   font-family: PingFangTC, "Microsoft JhengHei", sans-serif;
@@ -18,6 +33,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 18px;
   }
 
   @media (max-width: 576px) {
@@ -49,6 +68,13 @@ a {
 
 .hugo {
 
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    width: 375px;
+    height: 667px;
+    overflow: scroll;
+  }
+
+
   @media (max-width: 575.98px) {
     height: 100vh;
   }
@@ -62,7 +88,7 @@ a {
   padding: 0;
 
   @media (min-width: 576px) and (max-width: 1440px) {
-    max-width: 414px;
+    max-width: 375px;
   }
 
 }
@@ -93,6 +119,7 @@ a {
   background-size: contain;
   background-position: top center;
   margin-top: 35px;
+  animation: zoom-in 1s ease-out;
 
   @media (max-width: 1440px) {
     height: 70px;
@@ -110,6 +137,7 @@ a {
   background-size: contain;
   background-position: top center;
   margin: 25px auto;
+  animation: zoom 1s ease-out 0.5s;
 }
 
 
@@ -126,6 +154,7 @@ main {
       background-repeat: no-repeat;
       background-size: contain;
       background-position: top center;
+      animation: up-down 1.5s infinite linear;
 
       @media (max-width: 1440px) {
         height: 300px;
@@ -141,24 +170,26 @@ main {
   //discript
 
   .discript1 {
-    padding: 65px 10.416% 45px;
+    padding: 65px 30px 45px;
 
     @media (max-width: 1440px) {
-      padding: 20px 30px;
+      padding: 20px 30px 0;
     }
   }
 
   a {
+
     .discript-img {
-      width: 100%;
+      width: 70%;
       height: 304px;
-      background-image: url("../img/hugo_discript.png");
+      margin: 0 auto;
+      background-image: url("../img/hugo_discript.gif");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
 
       @media (max-width: 1440px) {
-        height: 275px;
+        height: 250px;
       }
 
       &:hover {
@@ -188,7 +219,7 @@ main {
     margin: 50px auto 30px;
 
     @media (max-width: 1440px) {
-      height: 90px;
+      height: 70px;
       margin: 25px auto;
     }
 
@@ -207,7 +238,8 @@ main {
     line-height: 100px;
 
     @media (max-width: 1440px) {
-      line-height: 90px;
+      line-height: 70px;
+      font-size: 24px;
     }
 
     @media (max-width: 575.98px) {
@@ -250,27 +282,27 @@ main {
   }
 
   .button {
-    width: 66.7%;
+    width: calc(100% - 100px);
     height: 60px;
     display: block;
-    margin: 0 16.667% 9%;
+    margin: 0 50px 30px;
     border-radius: 5px;
     box-shadow: 0 5px 15px 2px rgba(94, 144, 156, 0.3);
     background-color: @color-white;
     border: solid 2px @color-blue;
     color: @color-blue;
     cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease-in;
 
     @media (max-width: 1440px) {
-      width: calc(100% - 100px);
-      display: block;
-      margin: 0 50px 30px;
+      height: 50px;
+      margin: 0 50px 25px;
     }
 
     @media (max-width: 575.98px) {
       width: calc(100% - 80px);
       margin: 0 40px 25px;
-      height: 50px;
     }
 
 
@@ -315,7 +347,7 @@ main {
       }
 
       @media (max-width: 1440px) {
-        padding-top: 20px;
+        padding-top: 15px;
       }
 
       @media (max-width: 575.98px) {
@@ -349,7 +381,7 @@ main {
       left: 10px;
 
       @media (max-width: 1440px) {
-        font-size: 90px;
+        font-size: 70px;
       }
 
       @media (max-width: 575.98px) {
@@ -380,10 +412,6 @@ main {
     height: 341px;
 
     @media (max-width: 1440px) {
-      height: 300px;
-    }
-
-    @media (max-width: 575.98px) {
       height: 250px;
     }
 
