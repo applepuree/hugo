@@ -269,12 +269,25 @@ main .button {
   margin: 0 50px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 15px 2px rgba(94, 144, 156, 0.3);
-  background-color: #ffffff;
+  background-color: transparent;
   border: solid 2px #5e909c;
   color: #5e909c;
   cursor: pointer;
   position: relative;
+  z-index: 1;
   transition: all 0.3s ease-in;
+}
+main .button::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #5e909c;
+  transform: scaleX(0);
+  transition: 0.3s;
 }
 @media (max-width: 1440px) {
   main .button {
@@ -298,8 +311,10 @@ main .button:last-child {
 }
 main .button:hover {
   color: #ffffff;
-  background-color: #5e909c;
   text-decoration: none;
+}
+main .button:hover::after {
+  transform: scaleX(1);
 }
 main .button:focus {
   outline: none;

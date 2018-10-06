@@ -288,12 +288,26 @@ main {
     margin: 0 50px 30px;
     border-radius: 5px;
     box-shadow: 0 5px 15px 2px rgba(94, 144, 156, 0.3);
-    background-color: @color-white;
+    background-color: transparent;
     border: solid 2px @color-blue;
     color: @color-blue;
     cursor: pointer;
     position: relative;
+    z-index: 1;
     transition: all 0.3s ease-in;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: @color-blue;
+      transform: scaleX(0);
+      transition: 0.3s
+    }
 
     @media (max-width: 1440px) {
       height: 50px;
@@ -317,8 +331,11 @@ main {
 
     &:hover {
       color: @color-white;
-      background-color: @color-blue;
       text-decoration: none;
+
+      &::after {
+        transform: scaleX(1);
+      }
     }
 
     &:focus {
