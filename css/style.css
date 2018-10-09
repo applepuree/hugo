@@ -23,6 +23,7 @@
   0%,
   100% {
     transform: scale(1);
+    opacity: 1;
   }
   50% {
     transform: scale(1.2);
@@ -135,7 +136,9 @@ a:hover {
   background-size: contain;
   background-position: top center;
   margin: 25px auto;
-  animation: zoom 1s ease-out 0.5s;
+  opacity: 0;
+  animation: zoom 1s ease-out 1.5s;
+  animation-fill-mode: forwards;
 }
 main .home-img {
   width: 100%;
